@@ -14,7 +14,7 @@ public class EmployeeController {
 	@RequestMapping("/")
 	public List<Employee> getEmployees() {
 		List<Employee> employeesList = new ArrayList<Employee>();
-		employeesList.add(new Employee(1, "lokesh", "gupta", "howtodoinjava@gmail.com"));
+		employeesList.add(new Employee(1, "lokesh", "gupta", "lokesh@gmail.com"));
 		return employeesList;
 	}
 
