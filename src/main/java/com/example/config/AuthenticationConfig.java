@@ -28,15 +28,13 @@ public class AuthenticationConfig extends WebSecurityConfigurerAdapter {
 		authenticationMgr.jdbcAuthentication().dataSource(dataSource)
 				.usersByUsernameQuery("select username, password, enabled  from users where username=?")
 				.authoritiesByUsernameQuery("select username, authority from authorities where username=?")
-				.passwordEncoder(new BCryptPasswordEncoder());
+				.passwordEncoder(passwordEncoder);
 	}
 
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/login*").permitAll().antMatchers("/**").hasAnyRole("ADMIN", "USER").and()
-				.formLogin().loginPage("/login").defaultSuccessUrl("/home").failureUrl("/login?error=true").permitAll()
-				.and().logout().logoutSuccessUrl("/login?logout=true").invalidateHttpSession(true).permitAll().and()
-				.httpBasic().and().csrf().disable();
+		http.authorizeRequests().antMatchers("/**").hasAnyRole("ADMIN", "USER").and().httpBasic().and().csrf()
+				.disable();
 	}
 
 	@Bean
