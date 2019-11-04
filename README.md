@@ -4,5 +4,5 @@
 # Java 
 # Spring Boot v2.2.0.RELEASE (Micro services)
 # Spring Data JPA ,Spring Security   
-# Mysql       
-# <packaging>war</packaging>
+# Mysql         
+# packaging as war
