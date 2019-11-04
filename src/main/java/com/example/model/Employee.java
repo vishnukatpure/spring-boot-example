@@ -1,6 +1,20 @@
 package com.example.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class Employee {
+
+	@Id
+	@GeneratedValue
+	private Integer id;
+	private String firstName;
+	private String lastName;
+	private String email;
 
 	public Employee() {
 
@@ -13,11 +27,6 @@ public class Employee {
 		this.lastName = lastName;
 		this.email = email;
 	}
-
-	private Integer id;
-	private String firstName;
-	private String lastName;
-	private String email;
 
 	public Integer getId() {
 		return id;

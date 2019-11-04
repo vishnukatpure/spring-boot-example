@@ -3,7 +3,6 @@ package com.example.config;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -14,8 +13,7 @@ import org.springframework.context.annotation.Configuration;
 public class SpringBootExampleApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext ctx = SpringApplication.run(SpringBootExampleApplication.class, args);
-		System.out.println(ctx);
+		SpringApplication.run(SpringBootExampleApplication.class, args);
 	}
 
 }
